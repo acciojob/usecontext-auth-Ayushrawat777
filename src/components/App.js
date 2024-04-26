@@ -1,16 +1,21 @@
-import React, { createContext, useState } from "react";
-import './../styles/App.css';
+import React, { useState } from "react";
 import Auth from "./Auth";
-export const AuthContext=createContext();
+import authContext from "./Authcontext";
+
 const App = () => {
-  const [data, setdata] = useState(false);
+  //using the state to dynamicallly pass the values to the context
+
+  const [authstatus, setauthstatus] = useState(false);
+  const login = () => {
+    setauthstatus(true);
+    // ckncnvjekf
+  };
   return (
-    <div>
-      <AuthContext.Provider value={{data,setdata}}>
+    <React.Fragment>
+      <authContext.Provider value={{ status: authstatus, login: login }}>
         <Auth />
-      </AuthContext.Provider>
-    </div>
+      </authContext.Provider>
+    </React.Fragment>
   );
 };
-
 export default App;
