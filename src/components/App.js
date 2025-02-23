@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Auth from "./Auth";
-import authContext from "./Authcontext";
+import authContext from "./Authcontext"
 
 const App = () => {
   //using the state to dynamicallly pass the values to the context
